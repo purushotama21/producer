@@ -724,20 +724,6 @@ print()
 
 
 
-# ./SQL/PPTS/schema/post_deployment/
-
-# ./SQL/KHW/schema/procedures/
-
-# ./SQL/GOLF/schema/tables/
-
-# ./SQL/SSS/schema/tables/
-
-# ./SQL/JDERPT/schema/tables/
-
-# ./SQL/CRPDTA/schema/tables/
-
-# ./SQL/IMPACT/schema/tables/
-
 
 
 
