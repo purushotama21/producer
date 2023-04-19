@@ -234,7 +234,7 @@ def main():
 
 	print("Running RS Deployer...")
 
-	conn = None
+	cp_conn = None
 	cur = None
 	try:
 
@@ -450,14 +450,14 @@ def main():
 	except Exception as e:
 		print("DEPLOYER ERROR: " + getattr(e, 'strerror', str(e)))
 		if cur is not None:
-			conn.rollback()
+			cp_conn.rollback()
 			sys.exit(200)
 
 	finally:
-		if cur is not None:
-			cur.close()
-		if conn is not None:
-			conn.close()
+		if cp_cur is not None:
+			cp_cur.close()
+		if cp_conn is not None:
+			cp_conn.close()
 	print("Done")
 	sys.exit(0)
 
