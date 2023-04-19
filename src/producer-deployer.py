@@ -413,7 +413,7 @@ def main():
 
 			build_fsso = sys.argv[4]
 
-			schema_owner_map = fetch_schema_owners(cur, build_fsso)
+			schema_owner_map = fetch_schema_owners(cp_cur, build_fsso)
 
 			print("Deploying Objects...")
 
