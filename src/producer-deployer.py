@@ -217,8 +217,8 @@ def addCommitedFile(commit_item):
 			cp_post_deployment.add(commit_item)
 
 	if commit_item.endswith('.ddl'):
-		if commit_item.find('/tables/') > 0 and commit_item not in tables:
-				tables.add(commit_item)
+		if commit_item.find('/tables/') > 0 and commit_item not in cp_tables:
+				cp_tables.add(commit_item)
 
 def fetch_schema_owners(cursor, build_fsso):
 	if build_fsso == '502825978':	# Required only for Central CICD Job, other jobs uses their own FSSO to build code
