@@ -445,7 +445,7 @@ def main():
 				print("Total number of procedures : "+str(len(cp_procedures)))
 			print('-----------------------------------------------------------------------')
 		else:
-			print("No valid files found to deploy in <files_to_deploy>: " + cp_commit_file)
+			print("No valid files found to deploy in <files_to_deploy>: " + commit_file)
 
 	except Exception as e:
 		print("DEPLOYER ERROR: " + getattr(e, 'strerror', str(e)))
