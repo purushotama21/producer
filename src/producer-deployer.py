@@ -235,7 +235,7 @@ def main():
 	print("Running RS Deployer...")
 
 	cp_conn = None
-	cur = None
+	cp_cur = None
 	try:
 
 		# Argument validation: make sure the correct number of arguments was supplied
@@ -433,7 +433,7 @@ def main():
 				writeToDB(post_deployment_list, cp_cur, None, None, False)
 
 
-			conn.commit()
+			cp_conn.commit()
 			print('-----------------------------------------------------------------------')
 			print('---------------------- Deployment Summary Report ----------------------')
 			print('-----------------------------------------------------------------------')
@@ -449,7 +449,7 @@ def main():
 
 	except Exception as e:
 		print("DEPLOYER ERROR: " + getattr(e, 'strerror', str(e)))
-		if cur is not None:
+		if cp_cur is not None:
 			cp_conn.rollback()
 			sys.exit(200)
 
