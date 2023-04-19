@@ -202,19 +202,19 @@ def writeToDB(filenames, cursor, obj_type, schema_owner_map, update_owner):
 def addCommitedFile(commit_item):
 	if commit_item.endswith('.sql'):
 		if commit_item.find('/pre_deployment/') > 0:
-			pre_deployment.add(commit_item)
-		elif commit_item.find('/functions/') > 0:
-			functions.add(commit_item)
+			cp_pre_deployment.add(commit_item)
+		# elif commit_item.find('/functions/') > 0:
+		# 	cp_functions.add(commit_item)
 		elif commit_item.find('/procedures/') > 0:
-			procedures.add(commit_item)
+			cp_procedures.add(commit_item)
 		elif commit_item.find('/views/') > 0:
-			views.add(commit_item)
-		elif commit_item.find('/lbviews/') > 0:
-			lbviews.add(commit_item)
-		elif commit_item.find('/constraints/') > 0:
-			constraints.add(commit_item)
+			cp_views.add(commit_item)
+		# elif commit_item.find('/lbviews/') > 0:
+		# 	cp_lbviews.add(commit_item)
+		# elif commit_item.find('/constraints/') > 0:
+		# 	cp_constraints.add(commit_item)
 		elif commit_item.find('/post_deployment/') > 0:
-			post_deployment.add(commit_item)
+			cp_post_deployment.add(commit_item)
 
 	if commit_item.endswith('.ddl'):
 		if commit_item.find('/tables/') > 0 and commit_item not in tables:
