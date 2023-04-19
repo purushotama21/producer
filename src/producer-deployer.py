@@ -422,7 +422,7 @@ def main():
 				writeToDB(pre_deployment_list, cp_cur, None, None, False)
 			if len(cp_tables) > 0:
 				#takeTableBackup(tables, cur)
-				writeToDB(cp_tables, cur, 'table', schema_owner_map, True)
+				writeToDB(cp_tables, cp_cur, 'table', schema_owner_map, True)
 				#restoreTableData(tables, cur)
 			if len(cp_views) > 0:
 				writeToDB(sorted(cp_views), cp_cur, 'table', schema_owner_map, True)
