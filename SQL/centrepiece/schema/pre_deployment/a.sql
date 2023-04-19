@@ -1,1 +1,1 @@
-create schema abcd;
+create schema schema;
