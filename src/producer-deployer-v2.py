@@ -704,7 +704,7 @@ def main():
 			if os.path.isfile(cobra_commit_file) == False:
 				print("File could not be found: " + cobra_commit_file + ". Skipping...")
 			if os.path.isfile(cobra_commit_file) == True:
-				addCommitedFile(cobra_commit_file)
+				cobra_addCommitedFile(cobra_commit_file)
 			else:
 				print("File not found: " +  cobra_commit_file)
 		#lst_ppts
@@ -712,7 +712,7 @@ def main():
 			if os.path.isfile(ppts_commit_file) == False:
 				print("File could not be found: " + ppts_commit_file + ". Skipping...")
 			if os.path.isfile(ppts_commit_file) == True:
-				addCommitedFile(ppts_commit_file)
+				ppts_addCommitedFile(ppts_commit_file)
 			else:
 				print("File not found: " +  ppts_commit_file)		
 		#lst_khw
@@ -720,7 +720,7 @@ def main():
 			if os.path.isfile(khw_commit_file) == False:
 				print("File could not be found: " + khw_commit_file + ". Skipping...")
 			if os.path.isfile(khw_commit_file) == True:
-				addCommitedFile(khw_commit_file)
+				khw_addCommitedFile(khw_commit_file)
 			else:
 				print("File not found: " +  khw_commit_file)
 		#lst_golf					
@@ -728,7 +728,7 @@ def main():
 			if os.path.isfile(golf_commit_file) == False:
 				print("File could not be found: " + golf_commit_file + ". Skipping...")
 			if os.path.isfile(golf_commit_file) == True:
-				addCommitedFile(golf_commit_file)
+				golf_addCommitedFile(golf_commit_file)
 			else:
 				print("File not found: " +  golf_commit_file)
 		#lst_sss
@@ -736,7 +736,7 @@ def main():
 			if os.path.isfile(sss_commit_file) == False:
 				print("File could not be found: " + sss_commit_file + ". Skipping...")
 			if os.path.isfile(sss_commit_file) == True:
-				addCommitedFile(sss_commit_file)
+				sss_addCommitedFile(sss_commit_file)
 			else:
 				print("File not found: " +  sss_commit_file)
 		#lst_jderpt				
@@ -744,7 +744,7 @@ def main():
 			if os.path.isfile(jderpt_commit_file) == False:
 				print("File could not be found: " + jderpt_commit_file + ". Skipping...")
 			if os.path.isfile(jderpt_commit_file) == True:
-				addCommitedFile(jderpt_commit_file)
+				jderpt_addCommitedFile(jderpt_commit_file)
 			else:
 				print("File not found: " +  jderpt_commit_file)
 		#lst_crpdta
@@ -752,7 +752,7 @@ def main():
 			if os.path.isfile(crpdta_commit_file) == False:
 				print("File could not be found: " + crpdta_commit_file + ". Skipping...")
 			if os.path.isfile(crpdta_commit_file) == True:
-				addCommitedFile(crpdta_commit_file)
+				crpdta_addCommitedFile(crpdta_commit_file)
 			else:
 				print("File not found: " +  crpdta_commit_file)
 		
@@ -761,7 +761,7 @@ def main():
 			if os.path.isfile(impact_commit_file) == False:
 				print("File could not be found: " + impact_commit_file + ". Skipping...")
 			if os.path.isfile(impact_commit_file) == True:
-				addCommitedFile(impact_commit_file)
+				impact_addCommitedFile(impact_commit_file)
 			else:
 				print("File not found: " +  impact_commit_file)
 		#lst_crd
@@ -769,7 +769,7 @@ def main():
 			if os.path.isfile(crd_commit_file) == False:
 				print("File could not be found: " + crd_commit_file + ". Skipping...")
 			if os.path.isfile(crd_commit_file) == True:
-				addCommitedFile(crd_commit_file)
+				crd_addCommitedFile(crd_commit_file)
 			else:
 				print("File not found: " +  crd_commit_file)
 		#lst_kronos
@@ -778,7 +778,7 @@ def main():
 			if os.path.isfile(kronos_commit_file) == False:
 				print("File could not be found: " + kronos_commit_file + ". Skipping...")
 			if os.path.isfile(kronos_commit_file) == True:
-				addCommitedFile(kronos_commit_file)
+				kronos_addCommitedFile(kronos_commit_file)
 			else:
 				print("File not found: " +  kronos_commit_file)
 		#lst_ppm_niku
@@ -786,7 +786,7 @@ def main():
 			if os.path.isfile(ppm_niku_commit_file) == False:
 				print("File could not be found: " + ppm_niku_commit_file + ". Skipping...")
 			if os.path.isfile(ppm_niku_commit_file) == True:
-				addCommitedFile(ppm_niku_commit_file)
+				ppm_niku_addCommitedFile(ppm_niku_commit_file)
 			else:
 				print("File not found: " +  ppm_niku_commit_file)
 		#lst_okc
@@ -794,7 +794,7 @@ def main():
 			if os.path.isfile(okc_commit_file) == False:
 				print("File could not be found: " + okc_commit_file + ". Skipping...")
 			if os.path.isfile(okc_commit_file) == True:
-				addCommitedFile(okc_commit_file)
+				okc_addCommitedFile(okc_commit_file)
 			else:
 				print("File not found: " +  okc_commit_file)
 		#lst_wfm_cloudwfr
@@ -802,7 +802,7 @@ def main():
 			if os.path.isfile(wfm_cloudwfr_commit_file) == False:
 				print("File could not be found: " + wfm_cloudwfr_commit_file + ". Skipping...")
 			if os.path.isfile(wfm_cloudwfr_commit_file) == True:
-				addCommitedFile(wfm_cloudwfr_commit_file)
+				wfm_cloudwfr_addCommitedFile(wfm_cloudwfr_commit_file)
 			else:
 				print("File not found: " +  wfm_cloudwfr_commit_file)
 		#lst_mytime_dbo
@@ -810,7 +810,7 @@ def main():
 			if os.path.isfile(mytime_dbo_commit_file) == False:
 				print("File could not be found: " + mytime_dbo_commit_file + ". Skipping...")
 			if os.path.isfile(mytime_dbo_commit_file) == True:
-				addCommitedFile(mytime_dbo_commit_file)
+				mytime_dbo_addCommitedFile(mytime_dbo_commit_file)
 			else:
 				print("File not found: " +  mytime_dbo_commit_file)
 		#lst_aps_msc
@@ -818,7 +818,7 @@ def main():
 			if os.path.isfile(aps_msc_commit_file) == False:
 				print("File could not be found: " + aps_msc_commit_file + ". Skipping...")
 			if os.path.isfile(aps_msc_commit_file) == True:
-				addCommitedFile(aps_msc_commit_file)
+				aps_msc_addCommitedFile(aps_msc_commit_file)
 			else:
 				print("File not found: " +  aps_msc_commit_file)
 		#lst_drm
@@ -826,7 +826,7 @@ def main():
 			if os.path.isfile(drm_commit_file) == False:
 				print("File could not be found: " + drm_commit_file + ". Skipping...")
 			if os.path.isfile(drm_commit_file) == True:
-				addCommitedFile(drm_commit_file)
+				drm_addCommitedFile(drm_commit_file)
 			else:
 				print("File not found: " +  drm_commit_file)
 		if len(lst_centrepiece) > 0 or len(lst_cobra) > 0 or len(lst_ppts) > 0 or len(lst_khw) > 0 or len(lst_golf) > 0 or len(lst_sss) > 0 or len(lst_jderpt) > 0 or len(lst_crpdta) > 0 or len(lst_impact) > 0 or len(lst_crd) > 0 or len(lst_kronos) > 0 or len(lst_ppm_niku) > 0 or len(lst_okc) > 0 or len(lst_wfm_cloudwfr) > 0 or len(lst_mytime_dbo) > 0 or len(lst_aps_msc) > 0 or len(lst_drm) > 0:
