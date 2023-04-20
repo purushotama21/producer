@@ -1,4 +1,4 @@
-CREATE TABLE schema.category (
+CREATE TABLE ods_git.category (
     catid smallint NOT NULL ENCODE raw
     distkey
 ,
