@@ -831,7 +831,7 @@ def main():
 				print("File not found: " +  drm_commit_file)
 		if len(lst_centrepiece) > 0 or len(lst_cobra) > 0 or len(lst_ppts) > 0 or len(lst_khw) > 0 or len(lst_golf) > 0 or len(lst_sss) > 0 or len(lst_jderpt) > 0 or len(lst_crpdta) > 0 or len(lst_impact) > 0 or len(lst_crd) > 0 or len(lst_kronos) > 0 or len(lst_ppm_niku) > 0 or len(lst_okc) > 0 or len(lst_wfm_cloudwfr) > 0 or len(lst_mytime_dbo) > 0 or len(lst_aps_msc) > 0 or len(lst_drm) > 0:
 			cp_conn = pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[2], port=sys.argv[3], sslmode="require")
-			cobra_conn= pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[2], port=sys.argv[3], sslmode="require")
+			cobra_conn= pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[7], port=sys.argv[3], sslmode="require")
 			
 			ppts_conn=pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[2], port=sys.argv[3], sslmode="require")
 			
