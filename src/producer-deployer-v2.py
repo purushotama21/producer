@@ -579,6 +579,7 @@ def main():
 	cobra_conn = None
 	cobra_cur = None
 	ppts_conn=None
+	ppts_cur=None
 
 	try:
 
@@ -885,8 +886,7 @@ def main():
 			aps_msc_cur = aps_msc_conn.cursor()
 			drm_cur = drm_conn.cursor()
 
-			build_fsso = sys.argv[4]
-#####################################  cp  ########################################################
+			build_fsso = sys.argv[4] 
 			schema_owner_map = fetch_schema_owners(cp_cur, build_fsso)
 
 			print("Deploying Objects...")
@@ -925,7 +925,7 @@ def main():
 				post_deployment_list = sorted(list(cobra_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, cobra_cur, None, None, False)			
 
-#######################################################################################################
+
 
 			schema_owner_map = fetch_schema_owners(ppts_cur, build_fsso)
 
@@ -945,7 +945,7 @@ def main():
 			if len(ppts_post_deployment) > 0:
 				post_deployment_list = sorted(list(ppts_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, ppts_cur, None, None, False)
-######################################################################################################
+
 			schema_owner_map = fetch_schema_owners(khw_cur, build_fsso)
 
 			print("Deploying Objects...")
@@ -965,7 +965,7 @@ def main():
 				post_deployment_list = sorted(list(khw_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, khw_cur, None, None, False)
 
-#########################################################################################################
+
 			schema_owner_map = fetch_schema_owners(golf_cur, build_fsso)
 
 			print("Deploying Objects...")
@@ -985,7 +985,7 @@ def main():
 				post_deployment_list = sorted(list(golf_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, golf_cur, None, None, False)
 
-#################################################################################################
+
 
 
 			schema_owner_map = fetch_schema_owners(sss_cur, build_fsso)
@@ -1007,7 +1007,7 @@ def main():
 				post_deployment_list = sorted(list(sss_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, sss_cur, None, None, False)
 
-############################################################################################
+
 			schema_owner_map = fetch_schema_owners(jderpt_cur, build_fsso)
 
 			print("Deploying Objects...")
@@ -1027,7 +1027,7 @@ def main():
 				post_deployment_list = sorted(list(jderpt_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, jderpt_cur, None, None, False)
 
-##########################################################				
+				
 			schema_owner_map = fetch_schema_owners(crpdta_cur, build_fsso)
 
 			print("Deploying Objects...")
@@ -1046,7 +1046,7 @@ def main():
 			if len(crpdta_post_deployment) > 0:
 				post_deployment_list = sorted(list(crpdta_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, crpdta_cur, None, None, False)
-			###############################################################
+			
 
 
 			schema_owner_map = fetch_schema_owners(impact_cur, build_fsso)
@@ -1072,6 +1072,7 @@ def main():
 
 			cp_conn.commit()
 			cobra_conn.commit()
+			ppts_conn.commit()
 			print('-----------------------------------------------------------------------')
 			print('---------------------- Deployment Summary Report ----------------------')
 			print('-----------------------------------------------------------------------')
@@ -1182,7 +1183,9 @@ def main():
 		if cobra_cur is not None:
 			cobra_conn.rollback()
 			sys.exit(200)
-
+		if ppts_cur is not None:
+			ppts_conn.rollback()
+			sys.exit(200)
 	finally:
 		if cp_cur is not None:
 			cp_cur.close()
@@ -1192,6 +1195,11 @@ def main():
 			cobra_cur.close()
 		if cobra_conn is not None:
 			cobra_conn.close()
+
+		if ppts_cur is not None:
+			ppts_cur.close()
+		if ppts_conn is not None:
+			ppts_conn.close()			
 	print("Done")
 	sys.exit(0)
 
