@@ -580,6 +580,35 @@ def main():
 	cobra_cur = None
 	ppts_conn=None
 	ppts_cur=None
+	khw_conn=None
+	khw_cur=None
+	golf_conn = None
+	golf_cur = None
+	sss_conn = None
+	sss_cur = None
+	jderpt_conn = None
+	jderpt_cur = None
+	crpdta_conn = None
+	crpdta_cur = None
+	impact_conn = None
+	impact_cur = None
+	crd_conn = None
+	crd_cur = None
+	kronos_conn = None
+	kronos_cur = None
+	ppm_niku_conn = None
+	ppm_niku_cur = None
+	okc_conn = None
+	okc_cur = None
+	wfm_cloudwfr_conn = None
+	wfm_cloudwfr_cur = None
+	mytime_dbo_conn = None
+	mytime_dbo_cur = None
+	aps_msc_conn = None
+	aps_msc_cur = None
+	drm_conn = None
+	drm_cur = None
+
 
 	try:
 
@@ -1068,11 +1097,156 @@ def main():
 				post_deployment_list = sorted(list(impact_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, impact_cur, None, None, False)
 
+			schema_owner_map = fetch_schema_owners(crd_cur, build_fsso)
 
+			print("Deploying Objects...")
+
+			if len(crd_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(crd_pre_deployment))
+				writeToDB(pre_deployment_list, crd_cur, None, None, False)
+			if len(crd_tables) > 0:
+				takeTableBackup(crd_tables, crd_cur)
+				writeToDB(crd_tables, crd_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(crd_views) > 0:
+				writeToDB(sorted(crd_views), crd_cur, 'table', schema_owner_map, True)
+			if len(crd_procedures) > 0:
+				writeToDB(crd_procedures, crd_cur, 'procedure', schema_owner_map, True)
+			if len(crd_post_deployment) > 0:
+				post_deployment_list = sorted(list(crd_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, crd_cur, None, None, False)
+
+			schema_owner_map = fetch_schema_owners(ppm_niku_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(ppm_niku_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(ppm_niku_pre_deployment))
+				writeToDB(pre_deployment_list, ppm_niku_cur, None, None, False)
+			if len(ppm_niku_tables) > 0:
+				takeTableBackup(ppm_niku_tables, ppm_niku_cur)
+				writeToDB(ppm_niku_tables, ppm_niku_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(ppm_niku_views) > 0:
+				writeToDB(sorted(ppm_niku_views), ppm_niku_cur, 'table', schema_owner_map, True)
+			if len(ppm_niku_procedures) > 0:
+				writeToDB(ppm_niku_procedures, ppm_niku_cur, 'procedure', schema_owner_map, True)
+			if len(ppm_niku_post_deployment) > 0:
+				post_deployment_list = sorted(list(ppm_niku_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, ppm_niku_cur, None, None, False)
+
+			schema_owner_map = fetch_schema_owners(okc_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(okc_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(okc_pre_deployment))
+				writeToDB(pre_deployment_list, okc_cur, None, None, False)
+			if len(okc_tables) > 0:
+				takeTableBackup(okc_tables, okc_cur)
+				writeToDB(okc_tables, okc_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(okc_views) > 0:
+				writeToDB(sorted(okc_views), okc_cur, 'table', schema_owner_map, True)
+			if len(okc_procedures) > 0:
+				writeToDB(okc_procedures, okc_cur, 'procedure', schema_owner_map, True)
+			if len(okc_post_deployment) > 0:
+				post_deployment_list = sorted(list(okc_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, okc_cur, None, None, False)
+
+			schema_owner_map = fetch_schema_owners(wfm_cloudwfr_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(wfm_cloudwfr_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(wfm_cloudwfr_pre_deployment))
+				writeToDB(pre_deployment_list, wfm_cloudwfr_cur, None, None, False)
+			if len(wfm_cloudwfr_tables) > 0:
+				takeTableBackup(wfm_cloudwfr_tables, wfm_cloudwfr_cur)
+				writeToDB(wfm_cloudwfr_tables, wfm_cloudwfr_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(wfm_cloudwfr_views) > 0:
+				writeToDB(sorted(wfm_cloudwfr_views), wfm_cloudwfr_cur, 'table', schema_owner_map, True)
+			if len(wfm_cloudwfr_procedures) > 0:
+				writeToDB(wfm_cloudwfr_procedures, wfm_cloudwfr_cur, 'procedure', schema_owner_map, True)
+			if len(wfm_cloudwfr_post_deployment) > 0:
+				post_deployment_list = sorted(list(wfm_cloudwfr_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, wfm_cloudwfr_cur, None, None, False)
+
+			schema_owner_map = fetch_schema_owners(mytime_dbo_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(mytime_dbo_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(mytime_dbo_pre_deployment))
+				writeToDB(pre_deployment_list, mytime_dbo_cur, None, None, False)
+			if len(mytime_dbo_tables) > 0:
+				takeTableBackup(mytime_dbo_tables, mytime_dbo_cur)
+				writeToDB(mytime_dbo_tables, mytime_dbo_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(mytime_dbo_views) > 0:
+				writeToDB(sorted(mytime_dbo_views), mytime_dbo_cur, 'table', schema_owner_map, True)
+			if len(mytime_dbo_procedures) > 0:
+				writeToDB(mytime_dbo_procedures, mytime_dbo_cur, 'procedure', schema_owner_map, True)
+			if len(mytime_dbo_post_deployment) > 0:
+				post_deployment_list = sorted(list(mytime_dbo_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, mytime_dbo_cur, None, None, False)
+
+			schema_owner_map = fetch_schema_owners(aps_msc_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(aps_msc_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(aps_msc_pre_deployment))
+				writeToDB(pre_deployment_list, aps_msc_cur, None, None, False)
+			if len(aps_msc_tables) > 0:
+				takeTableBackup(aps_msc_tables, aps_msc_cur)
+				writeToDB(aps_msc_tables, aps_msc_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(aps_msc_views) > 0:
+				writeToDB(sorted(aps_msc_views), aps_msc_cur, 'table', schema_owner_map, True)
+			if len(aps_msc_procedures) > 0:
+				writeToDB(aps_msc_procedures, aps_msc_cur, 'procedure', schema_owner_map, True)
+			if len(aps_msc_post_deployment) > 0:
+				post_deployment_list = sorted(list(aps_msc_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, aps_msc_cur, None, None, False)
+
+			schema_owner_map = fetch_schema_owners(drm_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(drm_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(drm_pre_deployment))
+				writeToDB(pre_deployment_list, drm_cur, None, None, False)
+			if len(drm_tables) > 0:
+				takeTableBackup(drm_tables, drm_cur)
+				writeToDB(drm_tables, drm_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(drm_views) > 0:
+				writeToDB(sorted(drm_views), drm_cur, 'table', schema_owner_map, True)
+			if len(drm_procedures) > 0:
+				writeToDB(drm_procedures, drm_cur, 'procedure', schema_owner_map, True)
+			if len(drm_post_deployment) > 0:
+				post_deployment_list = sorted(list(drm_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, drm_cur, None, None, False)
 
 			cp_conn.commit()
 			cobra_conn.commit()
 			ppts_conn.commit()
+			khw_conn.commit()
+			golf_conn.commit()
+			sss_conn.commit()
+			jderpt_conn.commit()
+			crpdta_conn.commit()
+			impact_conn.commit()
+			crd_conn.commit()
+			kronos_conn.commit()
+			ppm_niku_conn.commit()
+			okc_conn.commit()
+			wfm_cloudwfr_conn.commit()
+			mytime_dbo_conn.commit()
+			aps_msc_conn.commit()
+			drm_conn.commit()
 			print('-----------------------------------------------------------------------')
 			print('---------------------- Deployment Summary Report ----------------------')
 			print('-----------------------------------------------------------------------')
@@ -1170,7 +1344,83 @@ def main():
 				print("Total number of views : "+str(len(impact_views)))
 			if len(impact_procedures) > 0:
 				print("Total number of procedures : "+str(len(impact_procedures)))
-			print('-----------------------------------------------------------------------')			
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- crd Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(crd_tables) > 0:
+				print("Total number of tables : "+str(len(crd_tables)))							
+			if len(crd_views) > 0:
+				print("Total number of views : "+str(len(crd_views)))
+			if len(crd_procedures) > 0:
+				print("Total number of procedures : "+str(len(crd_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- ppm_niku Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(ppm_niku_tables) > 0:
+				print("Total number of tables : "+str(len(ppm_niku_tables)))							
+			if len(ppm_niku_views) > 0:
+				print("Total number of views : "+str(len(ppm_niku_views)))
+			if len(ppm_niku_procedures) > 0:
+				print("Total number of procedures : "+str(len(ppm_niku_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- okc Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(okc_tables) > 0:
+				print("Total number of tables : "+str(len(okc_tables)))							
+			if len(okc_views) > 0:
+				print("Total number of views : "+str(len(okc_views)))
+			if len(okc_procedures) > 0:
+				print("Total number of procedures : "+str(len(okc_procedures)))
+
+			print('-----------------------------------------------------------------------')
+			print('-----------------------------------------------------------------------')
+			print('---------------------- wfm_cloudwfr Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(wfm_cloudwfr_tables) > 0:
+				print("Total number of tables : "+str(len(wfm_cloudwfr_tables)))							
+			if len(wfm_cloudwfr_views) > 0:
+				print("Total number of views : "+str(len(wfm_cloudwfr_views)))
+			if len(wfm_cloudwfr_procedures) > 0:
+				print("Total number of procedures : "+str(len(wfm_cloudwfr_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- mytime_dbo Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(mytime_dbo_tables) > 0:
+				print("Total number of tables : "+str(len(mytime_dbo_tables)))							
+			if len(mytime_dbo_views) > 0:
+				print("Total number of views : "+str(len(mytime_dbo_views)))
+			if len(mytime_dbo_procedures) > 0:
+				print("Total number of procedures : "+str(len(mytime_dbo_procedures)))
+			print('-----------------------------------------------------------------------')
+			print('-----------------------------------------------------------------------')
+			print('---------------------- aps_msc Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(aps_msc_tables) > 0:
+				print("Total number of tables : "+str(len(aps_msc_tables)))							
+			if len(aps_msc_views) > 0:
+				print("Total number of views : "+str(len(aps_msc_views)))
+			if len(aps_msc_procedures) > 0:
+				print("Total number of procedures : "+str(len(aps_msc_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- drm Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(drm_tables) > 0:
+				print("Total number of tables : "+str(len(drm_tables)))							
+			if len(drm_views) > 0:
+				print("Total number of views : "+str(len(drm_views)))
+			if len(drm_procedures) > 0:
+				print("Total number of procedures : "+str(len(drm_procedures)))
+			print('-----------------------------------------------------------------------')
 
 		else:
 			print("No valid files found to deploy in <files_to_deploy>: " + commit_file)
@@ -1186,6 +1436,57 @@ def main():
 		if ppts_cur is not None:
 			ppts_conn.rollback()
 			sys.exit(200)
+		if khw_cur is not None:
+			khw_conn.rollback()
+			sys.exit(200)
+		if golf_cur is not None:
+			golf_conn.rollback()
+			sys.exit(200)
+
+		if sss_cur is not None:
+			sss_conn.rollback()
+			sys.exit(200)
+
+		if jderpt_cur is not None:
+			jderpt_conn.rollback()
+			sys.exit(200)	
+
+		if crpdta_cur is not None:
+			crpdta_conn.rollback()
+			sys.exit(200)
+
+		if impact_cur is not None:
+			impact_conn.rollback()
+			sys.exit(200)
+		if crd_cur is not None:
+			crd_conn.rollback()
+			sys.exit(200)
+		if kronos_cur is not None:
+			kronos_conn.rollback()
+			sys.exit(200)
+
+		if ppm_niku_cur is not None:
+			ppm_niku_conn.rollback()
+			sys.exit(200)
+
+		if okc_cur is not None:
+			okc_conn.rollback()
+			sys.exit(200)
+
+		if wfm_cloudwfr_cur is not None:
+			wfm_cloudwfr_conn.rollback()
+			sys.exit(200)
+
+		if mytime_dbo_cur is not None:
+			mytime_dbo_conn.rollback()
+			sys.exit(200)	
+		if aps_msc_cur is not None:
+			aps_msc_conn.rollback()
+			sys.exit(200)
+											
+		if drm_cur is not None:
+			drm_conn.rollback()
+			sys.exit(200)					
 	finally:
 		if cp_cur is not None:
 			cp_cur.close()
@@ -1195,11 +1496,75 @@ def main():
 			cobra_cur.close()
 		if cobra_conn is not None:
 			cobra_conn.close()
-
 		if ppts_cur is not None:
 			ppts_cur.close()
 		if ppts_conn is not None:
-			ppts_conn.close()			
+			ppts_conn.close()
+
+		if khw_cur is not None:
+			khw_cur.close()
+		if khw_conn is not None:
+			khw_conn.close()
+
+		if golf_cur is not None:
+			golf_cur.close()
+		if golf_conn is not None:
+			golf_conn.close()
+
+		if sss_cur is not None:
+			sss_cur.close()
+		if sss_conn is not None:
+			sss_conn.close()
+		if jderpt_cur is not None:
+			jderpt_cur.close()
+		if jderpt_conn is not None:
+			jderpt_conn.close()
+		if crpdta_cur is not None:
+			crpdta_cur.close()
+		if crpdta_conn is not None:
+			crpdta_conn.close()
+
+		if impact_cur is not None:
+			impact_cur.close()
+		if impact_conn is not None:
+			impact_conn.close()
+		if crd_cur is not None:
+			crd_cur.close()
+		if crd_conn is not None:
+			crd_conn.close()
+		if kronos_cur is not None:
+			kronos_cur.close()
+		if kronos_conn is not None:
+			kronos_conn.close()
+
+		if ppm_niku_cur is not None:
+			ppm_niku_cur.close()
+		if ppm_niku_conn is not None:
+			ppm_niku_conn.close()
+
+		if okc_cur is not None:
+			okc_cur.close()
+		if okc_conn is not None:
+			okc_conn.close()
+
+		if wfm_cloudwfr_cur is not None:
+			wfm_cloudwfr_cur.close()
+		if wfm_cloudwfr_conn is not None:
+			wfm_cloudwfr_conn.close()
+
+		if mytime_dbo_cur is not None:
+			mytime_dbo_cur.close()
+		if mytime_dbo_conn is not None:
+			mytime_dbo_conn.close()
+
+		if aps_msc_cur is not None:
+			aps_msc_cur.close()
+		if aps_msc_conn is not None:
+			aps_msc_conn.close()
+		if drm_cur is not None:
+			drm_cur.close()
+		if drm_conn is not None:
+			drm_conn.close()									
 	print("Done")
 	sys.exit(0)
 
