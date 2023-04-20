@@ -903,10 +903,10 @@ def main():
 			if len(cp_post_deployment) > 0:
 				post_deployment_list = sorted(list(cp_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, cp_cur, None, None, False)
-			##################################################
+
 			schema_owner_map = fetch_schema_owners(cobra_cur, build_fsso)
 
-			print("Deploying Objects...")
+			print("Cobra Deploying Objects...")
 
 			if len(cobra_pre_deployment) > 0:
 				pre_deployment_list = sorted(list(cobra_pre_deployment))
@@ -922,6 +922,150 @@ def main():
 			if len(cobra_post_deployment) > 0:
 				post_deployment_list = sorted(list(cobra_post_deployment)) #Order by filename
 				writeToDB(post_deployment_list, cobra_cur, None, None, False)			
+
+#######################################################################################################
+
+			schema_owner_map = fetch_schema_owners(ppts_cur, build_fsso)
+
+			print("ppts Deploying Objects...")
+
+			if len(ppts_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(ppts_pre_deployment))
+				writeToDB(pre_deployment_list, ppts_cur, None, None, False)
+			if len(ppts_tables) > 0:
+				takeTableBackup(ppts_tables, ppts_cur)
+				writeToDB(ppts_tables, ppts_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(ppts_views) > 0:
+				writeToDB(sorted(ppts_views), ppts_cur, 'table', schema_owner_map, True)
+			if len(ppts_procedures) > 0:
+				writeToDB(ppts_procedures, ppts_cur, 'procedure', schema_owner_map, True)
+			if len(ppts_post_deployment) > 0:
+				post_deployment_list = sorted(list(ppts_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, ppts_cur, None, None, False)
+######################################################################################################
+			schema_owner_map = fetch_schema_owners(khw_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(khw_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(khw_pre_deployment))
+				writeToDB(pre_deployment_list, khw_cur, None, None, False)
+			if len(khw_tables) > 0:
+				takeTableBackup(khw_tables, khw_cur)
+				writeToDB(khw_tables, khw_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(khw_views) > 0:
+				writeToDB(sorted(khw_views), khw_cur, 'table', schema_owner_map, True)
+			if len(khw_procedures) > 0:
+				writeToDB(khw_procedures, khw_cur, 'procedure', schema_owner_map, True)
+			if len(khw_post_deployment) > 0:
+				post_deployment_list = sorted(list(khw_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, khw_cur, None, None, False)
+
+#########################################################################################################
+			schema_owner_map = fetch_schema_owners(golf_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(golf_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(golf_pre_deployment))
+				writeToDB(pre_deployment_list, golf_cur, None, None, False)
+			if len(golf_tables) > 0:
+				takeTableBackup(golf_tables, golf_cur)
+				writeToDB(golf_tables, golf_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(golf_views) > 0:
+				writeToDB(sorted(golf_views), golf_cur, 'table', schema_owner_map, True)
+			if len(golf_procedures) > 0:
+				writeToDB(golf_procedures, golf_cur, 'procedure', schema_owner_map, True)
+			if len(golf_post_deployment) > 0:
+				post_deployment_list = sorted(list(golf_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, golf_cur, None, None, False)
+
+#################################################################################################
+
+
+			schema_owner_map = fetch_schema_owners(sss_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(sss_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(sss_pre_deployment))
+				writeToDB(pre_deployment_list, sss_cur, None, None, False)
+			if len(sss_tables) > 0:
+				takeTableBackup(sss_tables, sss_cur)
+				writeToDB(sss_tables, sss_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(sss_views) > 0:
+				writeToDB(sorted(sss_views), sss_cur, 'table', schema_owner_map, True)
+			if len(sss_procedures) > 0:
+				writeToDB(sss_procedures, sss_cur, 'procedure', schema_owner_map, True)
+			if len(sss_post_deployment) > 0:
+				post_deployment_list = sorted(list(sss_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, sss_cur, None, None, False)
+
+############################################################################################
+			schema_owner_map = fetch_schema_owners(jderpt_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(jderpt_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(jderpt_pre_deployment))
+				writeToDB(pre_deployment_list, jderpt_cur, None, None, False)
+			if len(jderpt_tables) > 0:
+				takeTableBackup(jderpt_tables, jderpt_cur)
+				writeToDB(jderpt_tables, jderpt_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(jderpt_views) > 0:
+				writeToDB(sorted(jderpt_views), jderpt_cur, 'table', schema_owner_map, True)
+			if len(jderpt_procedures) > 0:
+				writeToDB(jderpt_procedures, jderpt_cur, 'procedure', schema_owner_map, True)
+			if len(jderpt_post_deployment) > 0:
+				post_deployment_list = sorted(list(jderpt_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, jderpt_cur, None, None, False)
+
+##########################################################				
+			schema_owner_map = fetch_schema_owners(crpdta_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(crpdta_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(crpdta_pre_deployment))
+				writeToDB(pre_deployment_list, crpdta_cur, None, None, False)
+			if len(crpdta_tables) > 0:
+				takeTableBackup(crpdta_tables, crpdta_cur)
+				writeToDB(crpdta_tables, crpdta_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(crpdta_views) > 0:
+				writeToDB(sorted(crpdta_views), crpdta_cur, 'table', schema_owner_map, True)
+			if len(crpdta_procedures) > 0:
+				writeToDB(crpdta_procedures, crpdta_cur, 'procedure', schema_owner_map, True)
+			if len(crpdta_post_deployment) > 0:
+				post_deployment_list = sorted(list(crpdta_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, crpdta_cur, None, None, False)
+			###############################################################
+
+
+			schema_owner_map = fetch_schema_owners(impact_cur, build_fsso)
+
+			print("Deploying Objects...")
+
+			if len(impact_pre_deployment) > 0:
+				pre_deployment_list = sorted(list(impact_pre_deployment))
+				writeToDB(pre_deployment_list, impact_cur, None, None, False)
+			if len(impact_tables) > 0:
+				takeTableBackup(impact_tables, impact_cur)
+				writeToDB(impact_tables, impact_cur, 'table', schema_owner_map, True)
+				#restoreTableData(tables, cur)
+			if len(impact_views) > 0:
+				writeToDB(sorted(impact_views), impact_cur, 'table', schema_owner_map, True)
+			if len(impact_procedures) > 0:
+				writeToDB(impact_procedures, impact_cur, 'procedure', schema_owner_map, True)
+			if len(impact_post_deployment) > 0:
+				post_deployment_list = sorted(list(impact_post_deployment)) #Order by filename
+				writeToDB(post_deployment_list, impact_cur, None, None, False)
+
 
 
 			cp_conn.commit()
@@ -947,6 +1091,83 @@ def main():
 			if len(cobra_procedures) > 0:
 				print("Total number of procedures : "+str(len(cobra_procedures)))
 			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(ppts_tables) > 0:
+				print("Total number of tables : "+str(len(ppts_tables)))							
+			if len(ppts_views) > 0:
+				print("Total number of views : "+str(len(ppts_views)))
+			if len(ppts_procedures) > 0:
+				print("Total number of procedures : "+str(len(ppts_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(khw_tables) > 0:
+				print("Total number of tables : "+str(len(khw_tables)))							
+			if len(khw_views) > 0:
+				print("Total number of views : "+str(len(khw_views)))
+			if len(khw_procedures) > 0:
+				print("Total number of procedures : "+str(len(khw_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(golf_tables) > 0:
+				print("Total number of tables : "+str(len(golf_tables)))							
+			if len(golf_views) > 0:
+				print("Total number of views : "+str(len(golf_views)))
+			if len(golf_procedures) > 0:
+				print("Total number of procedures : "+str(len(golf_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(sss_tables) > 0:
+				print("Total number of tables : "+str(len(sss_tables)))							
+			if len(sss_views) > 0:
+				print("Total number of views : "+str(len(sss_views)))
+			if len(sss_procedures) > 0:
+				print("Total number of procedures : "+str(len(sss_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(jderpt_tables) > 0:
+				print("Total number of tables : "+str(len(jderpt_tables)))							
+			if len(jderpt_views) > 0:
+				print("Total number of views : "+str(len(jderpt_views)))
+			if len(jderpt_procedures) > 0:
+				print("Total number of procedures : "+str(len(jderpt_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(crpdta_tables) > 0:
+				print("Total number of tables : "+str(len(crpdta_tables)))							
+			if len(crpdta_views) > 0:
+				print("Total number of views : "+str(len(crpdta_views)))
+			if len(crpdta_procedures) > 0:
+				print("Total number of procedures : "+str(len(crpdta_procedures)))
+			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(impact_tables) > 0:
+				print("Total number of tables : "+str(len(impact_tables)))							
+			if len(impact_views) > 0:
+				print("Total number of views : "+str(len(impact_views)))
+			if len(impact_procedures) > 0:
+				print("Total number of procedures : "+str(len(impact_procedures)))
+			print('-----------------------------------------------------------------------')			
 
 		else:
 			print("No valid files found to deploy in <files_to_deploy>: " + commit_file)
