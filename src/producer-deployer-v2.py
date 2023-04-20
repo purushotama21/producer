@@ -893,7 +893,7 @@ def main():
 				pre_deployment_list = sorted(list(cp_pre_deployment))
 				writeToDB(pre_deployment_list, cp_cur, None, None, False)
 			if len(cp_tables) > 0:
-				takeTableBackup(tables, cur)
+				takeTableBackup(cp_tables, cp_cur)
 				writeToDB(cp_tables, cp_cur, 'table', schema_owner_map, True)
 				#restoreTableData(tables, cur)
 			if len(cp_views) > 0:
@@ -912,9 +912,9 @@ def main():
 				pre_deployment_list = sorted(list(cobra_pre_deployment))
 				writeToDB(pre_deployment_list, cobra_cur, None, None, False)
 			if len(cobra_tables) > 0:
-				takeTableBackup(tables, cur)
+				takeTableBackup(cobra_tables, cobra_cur)
 				writeToDB(cobra_tables, cobra_cur, 'table', schema_owner_map, True)
-				#restoreTableData(tables, cur)
+				#restoreTableData(cobra_tables, cobra_cur)
 			if len(cobra_views) > 0:
 				writeToDB(sorted(cobra_views), cobra_cur, 'table', schema_owner_map, True)
 			if len(cobra_procedures) > 0:
