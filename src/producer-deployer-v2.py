@@ -578,6 +578,7 @@ def main():
 	cp_cur = None
 	cobra_conn = None
 	cobra_cur = None
+	ppts_conn=None
 
 	try:
 
