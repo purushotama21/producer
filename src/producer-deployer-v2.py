@@ -578,10 +578,11 @@ def main():
 	cp_cur = None
 	cobra_conn = None
 	cobra_cur = None
+
 	try:
 
 		# Argument validation: make sure the correct number of arguments was supplied
-		if len(sys.argv) != 8 or len(sys.argv[6]) < 1:
+		if len(sys.argv) != 20 or len(sys.argv[6]) < 1:
 			raise Exception("Invalid command line arguments. Expected <host> <database> <port> <username> <password> <commit_id> where <commit_id> is the hash for the most \\n recent commit. Note that this error may also appear if you do not have any tags on your project. You need at least one to start off.")
 
 
@@ -833,7 +834,7 @@ def main():
 			cp_conn = pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[2], port=sys.argv[3], sslmode="require")
 			cobra_conn= pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[7], port=sys.argv[3], sslmode="require")
 			
-			ppts_conn=pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[2], port=sys.argv[3], sslmode="require")
+			ppts_conn=pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[8], port=sys.argv[3], sslmode="require")
 			
 			khw_conn=pg.connect(host=sys.argv[1], user=sys.argv[4], password=sys.argv[5], database=sys.argv[2], port=sys.argv[3], sslmode="require")
 			
