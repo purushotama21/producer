@@ -936,6 +936,18 @@ def main():
 			if len(cp_procedures) > 0:
 				print("Total number of procedures : "+str(len(cp_procedures)))
 			print('-----------------------------------------------------------------------')
+
+			print('-----------------------------------------------------------------------')
+			print('---------------------- Deployment Summary Report ----------------------')
+			print('-----------------------------------------------------------------------')
+			if len(cobra_tables) > 0:
+				print("Total number of tables : "+str(len(cobra_tables)))							
+			if len(cobra_views) > 0:
+				print("Total number of views : "+str(len(cobra_views)))
+			if len(cobra_procedures) > 0:
+				print("Total number of procedures : "+str(len(cobra_procedures)))
+			print('-----------------------------------------------------------------------')
+
 		else:
 			print("No valid files found to deploy in <files_to_deploy>: " + commit_file)
 
