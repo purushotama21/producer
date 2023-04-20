@@ -1,1 +1,0 @@
-create schema a123ab;
